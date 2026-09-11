@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
+import '../auth/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,12 +16,12 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // TODO: replace with a real auth check once auth_service is wired up,
     // then route to MainShell instead of LoginScreen when already signed in.
-    // Timer(const Duration(milliseconds: 1800), () {
-    //   if (!mounted) return;
-    //   Navigator.of(
-    //     context,
-    //   ).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
-    // });
+    Timer(const Duration(milliseconds: 1800), () {
+      if (!mounted) return;
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
+    });
   }
 
   @override
