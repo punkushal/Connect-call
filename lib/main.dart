@@ -1,4 +1,5 @@
 import 'package:connect_call/core/theme/app_theme.dart';
+import 'package:connect_call/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Connect Call',
       theme: AppTheme.light,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: SplashScreen(),
     );
   }
 }
