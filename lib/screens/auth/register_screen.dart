@@ -1,5 +1,6 @@
 import 'package:connect_call/widgets/header_info.dart';
 import 'package:flutter/material.dart';
+import '../home/main_shell.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -13,7 +14,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmController = TextEditingController();
-  final bool _isLoading = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -26,14 +27,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Future<void> _handleCreateAccount() async {
     // TODO: call auth_service.register(...) and validate password match.
-    // setState(() => _isLoading = true);
-    // await Future.delayed(const Duration(milliseconds: 600));
-    // if (!mounted) return;
-    // setState(() => _isLoading = false);
-    // Navigator.of(context).pushAndRemoveUntil(
-    //   MaterialPageRoute(builder: (_) => const MainShell()),
-    //   (route) => false,
-    // );
+    setState(() => _isLoading = true);
+    await Future.delayed(const Duration(milliseconds: 600));
+    if (!mounted) return;
+    setState(() => _isLoading = false);
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (_) => const MainShell()),
+      (route) => false,
+    );
   }
 
   @override

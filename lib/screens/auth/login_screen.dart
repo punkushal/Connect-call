@@ -1,6 +1,7 @@
 import 'package:connect_call/widgets/header_info.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
+import '../home/main_shell.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
-  final bool _isLoading = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -25,13 +26,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _handleLogin() async {
     // TODO: call auth_service.login(email, password) here.
-    // setState(() => _isLoading = true);
-    // await Future.delayed(const Duration(milliseconds: 600));
-    // if (!mounted) return;
-    // setState(() => _isLoading = false);
-    // Navigator.of(
-    //   context,
-    // ).pushReplacement(MaterialPageRoute(builder: (_) => const MainShell()));
+    setState(() => _isLoading = true);
+    await Future.delayed(const Duration(milliseconds: 600));
+    if (!mounted) return;
+    setState(() => _isLoading = false);
+    Navigator.of(
+      context,
+    ).pushReplacement(MaterialPageRoute(builder: (_) => const MainShell()));
   }
 
   @override
