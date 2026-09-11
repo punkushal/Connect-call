@@ -1,5 +1,7 @@
+import 'package:connect_call/widgets/header_info.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -43,7 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               const SizedBox(height: 30),
               // welcome section
-              _buildHeaderInfo(),
+              HeaderInfo(
+                title: 'Welcome back',
+                subTitle: 'Log in to keep calling your contacts.',
+              ),
               const SizedBox(height: 32),
               const Text(
                 'Email',
@@ -106,11 +111,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (_) => const RegisterScreen(),
-                      //   ),
-                      // );
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const RegisterScreen(),
+                        ),
+                      );
                     },
                     child: const Text('Create Account'),
                   ),
@@ -119,28 +124,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildHeaderInfo() {
-    return Center(
-      child: Column(
-        spacing: 6,
-        children: [
-          const Text(
-            'Welcome back',
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.w700,
-              color: AppColors.textPrimary,
-            ),
-          ),
-          const Text(
-            'Log in to keep calling your contacts.',
-            style: TextStyle(fontSize: 14.5, color: AppColors.textSecondary),
-          ),
-        ],
       ),
     );
   }
