@@ -3,6 +3,7 @@ import '../../core/theme/app_theme.dart';
 import '../../data/mock_data.dart';
 import '../../models/user_model.dart';
 import '../../widgets/user_tile.dart';
+import '../call/audio_call_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,9 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _startAudioCall(UserModel user) {
-    // Navigator.of(
-    //   context,
-    // ).push(MaterialPageRoute(builder: (_) => AudioCallScreen(peer: user)));
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => AudioCallScreen(peer: user)));
   }
 
   void _startVideoCall(UserModel user) {
