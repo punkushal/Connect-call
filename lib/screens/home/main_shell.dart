@@ -1,6 +1,5 @@
 import 'package:connect_call/screens/contact/contact_screen.dart';
 import 'package:connect_call/screens/history/history_screen.dart';
-import 'package:connect_call/screens/home/home_screen.dart';
 import 'package:connect_call/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,12 +15,7 @@ class MainShell extends StatefulWidget {
 class _MainShellState extends State<MainShell> {
   int _index = 0;
 
-  final _screens = const [
-    HomeScreen(),
-    ContactScreen(),
-    HistoryScreen(),
-    ProfileScreen(),
-  ];
+  final _screens = const [ContactScreen(), HistoryScreen(), ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +27,6 @@ class _MainShellState extends State<MainShell> {
         currentIndex: _index,
         onTap: (i) => setState(() => _index = i),
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            label: 'Home',
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people_alt_rounded),
             label: 'Contacts',
