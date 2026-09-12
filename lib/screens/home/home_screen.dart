@@ -4,6 +4,7 @@ import '../../data/mock_data.dart';
 import '../../models/user_model.dart';
 import '../../widgets/user_tile.dart';
 import '../call/audio_call_screen.dart';
+import '../call/video_call_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,9 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _startVideoCall(UserModel user) {
-    // Navigator.of(
-    //   context,
-    // ).push(MaterialPageRoute(builder: (_) => VideoCallScreen(peer: user)));
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => VideoCallScreen(peer: user)));
   }
 
   @override
