@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
 import '../../data/mock_data.dart';
+import '../../models/call_model.dart';
 import '../../models/user_model.dart';
 import '../../widgets/user_tile.dart';
 import '../call/audio_call_screen.dart';
+import '../call/incoming_call_screen.dart';
 import '../call/video_call_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,14 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
           child: IconButton(
             tooltip: 'Simulate incoming call',
             onPressed: () {
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (_) => IncomingCallScreen(
-              //       caller: MockData.contacts[0],
-              //       type: CallType.video,
-              //     ),
-              //   ),
-              // );
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => IncomingCallScreen(
+                    caller: MockData.contacts[0],
+                    type: CallType.video,
+                  ),
+                ),
+              );
             },
             icon: const Icon(Icons.notifications_none_rounded),
           ),
